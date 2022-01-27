@@ -10,7 +10,7 @@ var edgesc = Gg.list2lines(edges, verts);
 createCanvas('mycanvas');
 var world = Gg.World(edgesc);
 var camera = Gg.Camera([0, 0, 0], [0, 0], [160, 160]);
-//main loop (text_input1 is my method to gain the keys, feel free to use anything else)
+//main loop
 timedLoop(4, function(){
   camera.render(world, 0.05, key);
 });
