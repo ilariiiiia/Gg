@@ -1,4 +1,11 @@
 /*
+DOCS
+
+READ https://github.com/nicola-commits/gg/main/readme.MD for more detailed info
+*/
+
+
+/*
 -------WORLD AND RENDER FUNCTIONS-------
 */
 
@@ -61,8 +68,8 @@ function _3dto2d(vert, camera){
   x *= f;
   y *= f;
   return {
-    x: cx + x,
-    y: cx + y
+    x: camera.cx + x,
+    y: camera.cy + y
   };
 }
 
@@ -169,15 +176,17 @@ function point(x, y, z){
 //  E and Q increase and decrease y respectively
 //  
 //}
-function Camera(position, rotation){
+function Camera(position, rotation, center){
   var pos = position || [0, 0, 0];
   var rot = rotation || [0, 0];
   return {
     pos : pos,
     rot : rot,
+    cx : center[0],
+    cy: center[1],
     rad : 0,
     update: function(dt, key){
-      if(key == '' || dt == 0){return}
+      if(!dt || !key){return}
       key = key.toUpperCase();
       var s = dt * 10;
       switch(key){
