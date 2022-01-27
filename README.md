@@ -1,7 +1,7 @@
 # Gg
 A 3d renderer for code.org and based upon its pre-built 2d engine. Learn more about code.org at https://github.com/code-dot-ord/code-dot-org.
 
-#USAGE
+# USAGE
 The whole library relies on two objects, world and camera. To create this two objects call the functions World() and Camera() respectively and assign them to a variable. As the creator of this project, I recommend using world and camera respectively.
 
 to create a line, you can either use the function Line() or create it with a much simpler method using list2lines(). More information and examples about the functions later.
